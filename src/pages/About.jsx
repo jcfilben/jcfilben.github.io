@@ -43,6 +43,39 @@ const designSkills = [
   "Content-First UX",
 ];
 
+const strengths = [
+  {
+    name: "Input",
+    description:
+      "I'm naturally curious and love gathering information. I ask the right questions to understand problems deeply before solving them.",
+    link: "https://www.gallup.com/cliftonstrengths/en/252278/input-theme.aspx",
+  },
+  {
+    name: "Empathy",
+    description:
+      "I genuinely understand what others are experiencing. This helps me build products where people feel understood and supported.",
+    link: "https://www.gallup.com/cliftonstrengths/en/252236/empathy-theme.aspx",
+  },
+  {
+    name: "Achiever",
+    description:
+      "I'm driven to accomplish meaningful work and see it through. Shipping quality code that actually helps people is what motivates me.",
+    link: "https://www.gallup.com/cliftonstrengths/en/252235/achiever-theme.aspx",
+  },
+  {
+    name: "Relator",
+    description:
+      "I build strong relationships and show up for people. Whether mentoring engineers or coaching founders, connection matters to me.",
+    link: "https://www.gallup.com/cliftonstrengths/en/252242/relator-theme.aspx",
+  },
+  {
+    name: "Intellection",
+    description:
+      "I think deeply about problems and how systems work together. I enjoy the intellectual challenge of design systems and patterns.",
+    link: "https://www.gallup.com/cliftonstrengths/en/252239/intellection-theme.aspx",
+  },
+];
+
 const volunteerItems = [
   {
     title: "HPE CodeWars Volunteer",
@@ -185,15 +218,21 @@ const About = () => {
           >
             <Box gap="medium">
               <Heading level={2} margin="none">
-                Professional Biography
+                A software engineer passionate about accessibility.
               </Heading>
               <Paragraph margin="none">
-                Today, I work as Lead Developer at Hewlett Packard Enterprise
-                with a strong focus on accessibility, component architecture,
-                and maintainable design systems. Across 7 years of frontend and
-                UI/UX development, I have partnered with teams to ship React
-                experiences that are performant, inclusive, and grounded in user
-                needs.
+                I'm a Lead Developer at Hewlett Packard Enterprise and core
+                maintainer of Grommet, a React component library with 30,000+
+                weekly npm downloads. My focus: building software that actually
+                works for everyone.
+              </Paragraph>
+              <Paragraph margin={{ top: "small", bottom: "none" }}>
+                Across 7+ years of frontend development, I've shipped
+                experiences that work smoothly whether you're using a keyboard,
+                a mouse, a screen reader, or just about any device. I've earned
+                two patents for designing interfaces that work reliably for
+                people with different abilities—and I lead teams and communities
+                around the principle that accessible design is just good design.
               </Paragraph>
             </Box>
 
@@ -220,15 +259,39 @@ const About = () => {
               </Box>
               <Text weight="bold">Quick Facts</Text>
               <Text size="small">
-                Current role: Lead Developer at Hewlett Packard Enterprise.
+                <strong>Role:</strong> Lead Developer at HPE; Core Maintainer of
+                Grommet (30K+ weekly npm downloads).
               </Text>
               <Text size="small">
-                Experience: 7 years in frontend and UI/UX-focused development.
+                <strong>Values:</strong> learning and continued growth; empathy
+                and connection; software that works for everyone.
               </Text>
               <Text size="small">
-                Hobbies: Spending time with my dog, yoga, camping, and
-                scrapbooking.
+                <strong>Proof:</strong> 2 patents in accessible UI design;
+                mentoring and community work across HPE, schools, and
+                nonprofits.
               </Text>
+              <Text size="small">
+                <strong>When not coding:</strong> spending time with my dog,
+                yoga, camping, or scrapbooking.
+              </Text>
+              <Box gap="xsmall" margin={{ top: "small" }}>
+                <Text size="small" weight="bold">
+                  Clifton StrengthFinder assessment results:
+                </Text>
+                <Box direction="row" wrap gap="xsmall">
+                  {strengths.map((strength) => (
+                    <Anchor
+                      key={strength.name}
+                      href={strength.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Tag size="small" name={strength.name} />
+                    </Anchor>
+                  ))}
+                </Box>
+              </Box>
             </Card>
           </Grid>
         )}
@@ -236,19 +299,26 @@ const About = () => {
 
       <Card background="white" pad="medium" gap="small" elevation="xsmall">
         <Heading level={3} margin="none">
-          Mission & Values
+          Why Accessibility Matters to Me
         </Heading>
         <Paragraph margin={{ top: "small", bottom: "none" }}>
-          Accessibility matters to me because technology should expand
-          opportunity, not create barriers. My mission is to build digital
-          experiences where people can participate fully, regardless of ability,
-          device, or context.
+          <strong>What is accessibility?</strong> It's making sure software
+          works for as many people as possible. This includes people who are
+          blind and use screen readers, people with motor challenges who
+          navigate with keyboards only, people with color blindness, people on
+          slow internet connections, and many others. When accessibility is
+          built in from the start, it makes software better for{" "}
+          <em>everyone</em>—clearer navigation, faster load times, easier to use
+          even when you're distracted or in a loud environment.
         </Paragraph>
         <Paragraph margin={{ top: "small", bottom: "none" }}>
-          I take a user-centered and inclusive approach to development by
-          combining semantic engineering practices, clear interaction patterns,
-          and iterative testing. What drives my work is seeing people succeed
-          because the interface supports them instead of getting in their way.
+          <strong>Why it matters to me:</strong> I believe technology should
+          expand what people can do, not put up walls. When a website doesn't
+          work with a keyboard, or when text is too small, or when videos have
+          no captions, real people are locked out. I've earned two patents by
+          designing interfaces that solve these problems. Personally, I'm driven
+          by empathy—I see the person behind every feature request. When I ship
+          something, I'm solving it for a real person, not checking a box.
         </Paragraph>
       </Card>
 
@@ -381,7 +451,7 @@ const About = () => {
                 gap="small"
                 elevation="xsmall"
               >
-                <Text weight="bold">Accessibility Expertise</Text>
+                <Text weight="bold">Accessibility Skills</Text>
                 <Box direction="row" wrap gap="xsmall">
                   {accessibilitySkills.map((skill) => (
                     <Tag key={skill} name={skill} />
@@ -470,35 +540,51 @@ const About = () => {
 
       <Card background="white" pad="medium" gap="small" elevation="xsmall">
         <Heading level={3} margin="none">
-          Work Philosophy
+          What I Bring to Teams
         </Heading>
         <Paragraph margin={{ top: "small", bottom: "none" }}>
-          I approach problem-solving by first understanding user intent,
-          constraints, and edge cases, then designing small, testable
-          improvements that can scale into robust systems.
+          <strong>Leadership:</strong> I lead by example—bringing accessibility,
+          clean, and thoughtful approaches into architecture, code reviews, and
+          mentoring from day one.
         </Paragraph>
         <Paragraph margin={{ top: "small", bottom: "none" }}>
-          Inclusive design is not an extra checklist item. It is a baseline
-          quality requirement. I build for everyone, literally.
+          <strong>UI/UX architecture:</strong> I design scalable, maintainable
+          component systems that balance developer experience with user
+          outcomes.
+        </Paragraph>
+        <Paragraph margin={{ top: "small", bottom: "none" }}>
+          <strong>Mentoring and growth:</strong> I invest in people—whether
+          coaching students on Git, helping open source contributors with their
+          code, mentoring engineers on accessibility, or helping founders refine
+          their pitch.
+        </Paragraph>
+        <Paragraph margin={{ top: "small", bottom: "none" }}>
+          <strong>Performance and reliability:</strong> I care about how systems
+          actually behave. Stability, usability, and quality are never
+          trade-offs.
         </Paragraph>
       </Card>
 
       <Card background="white" pad="medium" gap="medium" elevation="xsmall">
         <Heading level={3} margin="none">
-          Let&apos;s Build Something Accessible Together
+          Let&apos;s Connect
         </Heading>
         <Paragraph margin={{ top: "none", bottom: "none" }}>
-          Explore my project work to see this approach in practice, or reach out
-          directly if you want to collaborate on inclusive, user-centered
-          products.
+          I'd love to hear about opportunities to lead accessible product work,
+          mentor teams, or collaborate on challenging UI/UX problems. Whether
+          you're exploring roles, building open source communities, or working
+          on inclusive tech initiatives—let's talk.
         </Paragraph>
         <Box direction="row" wrap gap="small">
           <Button
             primary
-            label="View Projects"
+            label="Get In Touch"
+            onClick={() => navigate("/contact")}
+          />
+          <Button
+            label="View My Projects"
             onClick={() => navigate("/projects")}
           />
-          <Button label="Contact Me" onClick={() => navigate("/contact")} />
         </Box>
       </Card>
     </Box>
