@@ -7,10 +7,9 @@
       // SPA redirect for GitHub Pages: encode the current path into a query
       // param so index.html can restore it via history.replaceState.
       var l = window.location;
-      var base = l.pathname.split('/').slice(0, 2).join('/');
-      var path = l.pathname.slice(base.length).replace(/^\//, '');
+      var path = l.pathname.replace(/^\//, '');
       l.replace(
-        l.protocol + '//' + l.host + base + '/' +
+        l.protocol + '//' + l.host + '/' +
         '?p=' + path.replace(/&/g, '~and~') +
         (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
         l.hash
