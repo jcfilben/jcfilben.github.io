@@ -187,14 +187,6 @@ const About = () => {
               <Heading level={2} margin="none">
                 Professional Biography
               </Heading>
-              <Paragraph margin={{ top: "none" }}>
-                I started my development journey by building small UI
-                experiments and quickly realized that thoughtful interfaces can
-                remove friction in people&apos;s everyday lives. Over several
-                years in frontend engineering, I have focused on creating
-                products that feel intuitive, readable, and genuinely usable for
-                everyone.
-              </Paragraph>
               <Paragraph margin="none">
                 Today, I work as Lead Developer at Hewlett Packard Enterprise
                 with a strong focus on accessibility, component architecture,
