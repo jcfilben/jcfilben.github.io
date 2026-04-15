@@ -21,7 +21,6 @@ root.render(
           <Route path="about" element={<About />} />
           <Route path="raytracer" element={<Navigate to="/projects/raytracer" replace />} />
           <Route path="contact" element={<Contact />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>
